@@ -5,7 +5,7 @@ Overall, ...
 
 ### Recommendations
 * Our first recommendation is ..
-* Our sescond recommendation is ...
+* Our sescond recommendation is ... 
 
 ## Scope
 ```
@@ -18,23 +18,44 @@ contracts/
 └── strategies
     ├── BadgerSettBuyStrategy.sol
     └── OneInchBuyStrategy.sol
+└── libs
+    ├── Compression.sol
+    ├── DCAAccessControl.sol
+    ├── PeriodAware.sol
+    ├── PriceFeedConsumer.sol
+    ├── SlidingWindow.sol
+    └── Types.sol
 ```
 
 ## File Review
 ### `contracts/`
-#### ChainLinkGasCalculator.sol
+#### `ChainLinkGasCalculator.sol`
 N/A or description
-#### DCAPoolFacade.sol
+#### `DCAPoolFacade.sol`
 N/A or description
-#### DCAPoolFactory.sol
+#### `DCAPoolFactory.sol`
 N/A or description
-#### DCAScheduler.sol
+#### `DCAScheduler.sol`
 N/A or description
-#### DCAVault.sol
+#### `DCAVault.sol`
 N/A or description
 
 ### `contracts/strategies/`
-#### BadgerSettBuyStrategy.sol
+#### `BadgerSettBuyStrategy.sol`
 N/A or description
-#### OneInchBuyStrategy.sol
+#### `OneInchBuyStrategy.sol`
+N/A or description
+
+### `contracts/libs`
+#### `Compression.sol`
+N/A or description
+#### `DCAAccessControl.sol`
+N/A or description
+#### `PeriodAware.sol`
+N/A or description
+#### `PriceFeedConsumer.sol`
+N/A or description
+#### `SlidingWindow.sol`
+N/A or description
+#### `Types.sol`
 N/A or description
