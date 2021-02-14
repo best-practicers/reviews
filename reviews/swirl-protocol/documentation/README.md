@@ -1,19 +1,11 @@
 # Created By: [Carl Farterson](https://github.com/carlfarterson), [Jibran Raja](https://github.com/kjr217)
 
-## Recommendations
-### Recommendation #1
-Description
+## Summary / Recommendations
+Overall, ...
 
-### Recommendation #2
-Description
-
-## Summary
-### Good
-* `A`
-* `B`
-### Bad
-* `X`
-* `Y`
+### Recommendations
+* Our first recommendation is ..
+* Our sescond recommendation is ...
 
 ## Scope
 ```
