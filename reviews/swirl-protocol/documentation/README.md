@@ -32,38 +32,38 @@ Overall, ...
 ## File Review
 ### `contracts/`
 #### `ChainLinkGasCalculator.sol`
-addFeed() Line 45 misspelt "whether"
-addFeed() Perhaps provide a more specific definition of quote
+* addFeed() Line 45 misspelt "whether"
+* addFeed() Perhaps provide a more specific definition of quote
 
 #### `DCAPoolFacade.sol`
-definitions of state variables would imprve readiblity
-onlyKeeper() modifier definition
+* definitions of state variables would imprve readiblity
+* onlyKeeper() modifier definition
 
 #### `DCAPoolFactory.sol`
-Add comments for web assembly within `createPool()`.
+* Add comments for web assembly within `createPool()`.
 #### `DCAScheduler.sol`
-view and pure functions missing return natspec tag (ready(), \_ready(), getSchedule(), maxCycles())
+* view and pure functions missing return natspec tag (ready(), \_ready(), getSchedule(), maxCycles())
 #### `DCAVault.sol`
-define Account struct
-\_processBalanceChange() newTotalQty parameter could be explained better.
+* define Account struct
+* \_processBalanceChange() newTotalQty parameter could be explained better.
 
 ### `contracts/strategies/`
 #### `BadgerSettBuyStrategy.sol`
 N/A
 #### `OneInchBuyStrategy.sol`
-definition of state variables
+* definition of state variables
 
 ### `contracts/libs`
 #### `Compression.sol`
-title, author, notice tags?
+* title, author, notice tags?
 #### `DCAAccessControl.sol`
-Add natspec comments to `onlyVault()` and `onlyScheduler()` modifiers, `addVault()`, `removeVault()`, `addScheduler()`, and `removeScheduler()` functions. 
+* Add natspec comments to `onlyVault()` and `onlyScheduler()` modifiers, `addVault()`, `removeVault()`, `addScheduler()`, and `removeScheduler()` functions. 
 #### `PeriodAware.sol`
 N/A
 #### `PriceFeedConsumer.sol`
 N/A
 #### `SlidingWindow.sol`
-title, author, notice tags?
-return natspec tag missing on next(), peek() and toArray()
+* title, author, notice tags?
+* return natspec tag missing on next(), peek() and toArray()
 #### `Types.sol`
-title, author, notice tags?
+* title, author, notice tags?
