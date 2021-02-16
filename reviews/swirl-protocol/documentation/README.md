@@ -1,4 +1,5 @@
-# Created By: [Carl Farterson](https://github.com/carlfarterson), [Jibran Raja](https://github.com/kjr217)
+# swirl-protocol documentation
+## By: Carl Farterson
 
 ## Summary / Recommendations
 Overall, ...
@@ -56,6 +57,6 @@ N/A
 #### `PriceFeedConsumer.sol`
 N/A
 #### `SlidingWindow.sol`
-N/A or description
+N/A
 #### `Types.sol`
 N/A
