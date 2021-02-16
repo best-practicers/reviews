@@ -30,32 +30,32 @@ contracts/
 ## File Review
 ### `contracts/`
 #### `ChainLinkGasCalculator.sol`
-N/A or description
+N/A
 #### `DCAPoolFacade.sol`
-N/A or description
+N/A
 #### `DCAPoolFactory.sol`
-N/A or description
+Add comments for web assembly within `createPool()`.
 #### `DCAScheduler.sol`
-N/A or description
+N/A
 #### `DCAVault.sol`
-N/A or description
+N/A
 
 ### `contracts/strategies/`
 #### `BadgerSettBuyStrategy.sol`
-N/A or description
+N/A
 #### `OneInchBuyStrategy.sol`
-N/A or description
+N/A
 
 ### `contracts/libs`
 #### `Compression.sol`
-N/A or description
+N/A
 #### `DCAAccessControl.sol`
-N/A or description
+Add natspec comments to `onlyVault()` and `onlyScheduler()` modifiers, `addVault()`, `removeVault()`, `addScheduler()`, and `removeScheduler()` functions. 
 #### `PeriodAware.sol`
-N/A or description
+N/A
 #### `PriceFeedConsumer.sol`
-N/A or description
+N/A
 #### `SlidingWindow.sol`
 N/A or description
 #### `Types.sol`
-N/A or description
+N/A
