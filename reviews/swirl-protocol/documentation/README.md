@@ -1,5 +1,5 @@
-# swirl-protocol documentation
-## By: Carl Farterson
+# documentation
+## By: [carlfarterson](https://github.com/carlfarterson), [kjr217](https://github.com/kjr217)
 
 ## Summary / Recommendations
 Overall, ...
@@ -10,22 +10,24 @@ Overall, ...
 
 ## Scope
 ```
-contracts/
-├── ChainLinkGasCalculator.sol
-├── DCAPoolFacade.sol
-├── DCAPoolFactory.sol
-├── DCAScheduler.sol
-├── DCAVault.sol
-└── strategies
-    ├── BadgerSettBuyStrategy.sol
-    └── OneInchBuyStrategy.sol
-└── libs
-    ├── Compression.sol
-    ├── DCAAccessControl.sol
-    ├── PeriodAware.sol
-    ├── PriceFeedConsumer.sol
-    ├── SlidingWindow.sol
-    └── Types.sol
+├── README.md
+└── contracts
+    ├── ChainLinkGasCalculator.sol
+    ├── ChainLinkGasCalculator.sol
+    ├── DCAPoolFacade.sol
+    ├── DCAPoolFactory.sol
+    ├── DCAScheduler.sol
+    ├── DCAVault.sol
+    └── strategies
+        ├── BadgerSettBuyStrategy.sol
+        └── OneInchBuyStrategy.sol
+    └── libs
+        ├── Compression.sol
+        ├── DCAAccessControl.sol
+        ├── PeriodAware.sol
+        ├── PriceFeedConsumer.sol
+        ├── SlidingWindow.sol
+        └── Types.sol
 ```
 
 ## File Review
