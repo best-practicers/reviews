@@ -6,13 +6,12 @@ Overall, ...
 
 ### Recommendations
 * Our first recommendation is ..
-* Our sescond recommendation is ... 
+* Flow charts of how the contracts interact would be beneficial.
 
 ## Scope
 ```
 ├── README.md
 └── contracts
-    ├── ChainLinkGasCalculator.sol
     ├── ChainLinkGasCalculator.sol
     ├── DCAPoolFacade.sol
     ├── DCAPoolFactory.sol
@@ -33,25 +32,30 @@ Overall, ...
 ## File Review
 ### `contracts/`
 #### `ChainLinkGasCalculator.sol`
-N/A
+addFeed() Line 45 misspelt "whether"
+addFeed() Perhaps provide a more specific definition of quote
+
 #### `DCAPoolFacade.sol`
-N/A
+definitions of state variables would imprve readiblity
+onlyKeeper() modifier definition
+
 #### `DCAPoolFactory.sol`
 Add comments for web assembly within `createPool()`.
 #### `DCAScheduler.sol`
-N/A
+view and pure functions missing return natspec tag (ready(), \_ready(), getSchedule(), maxCycles())
 #### `DCAVault.sol`
-N/A
+define Account struct
+\_processBalanceChange() newTotalQty parameter could be explained better.
 
 ### `contracts/strategies/`
 #### `BadgerSettBuyStrategy.sol`
 N/A
 #### `OneInchBuyStrategy.sol`
-N/A
+definition of state variables
 
 ### `contracts/libs`
 #### `Compression.sol`
-N/A
+title, author, notice tags?
 #### `DCAAccessControl.sol`
 Add natspec comments to `onlyVault()` and `onlyScheduler()` modifiers, `addVault()`, `removeVault()`, `addScheduler()`, and `removeScheduler()` functions. 
 #### `PeriodAware.sol`
@@ -59,6 +63,7 @@ N/A
 #### `PriceFeedConsumer.sol`
 N/A
 #### `SlidingWindow.sol`
-N/A
+title, author, notice tags?
+return natspec tag missing on next(), peek() and toArray()
 #### `Types.sol`
-N/A
+title, author, notice tags?
