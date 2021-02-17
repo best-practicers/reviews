@@ -2,7 +2,7 @@
 ## By: [Kevin Keaveney](https://github.com/kkeaveney)
 
 ## Summary / Recommendations
-Overall, ...
+Overall, ..
 
 ### Recommendations
 * Our first recommendation is .. Use of Open Zepplin OpenZeppelin ReentrancyGuard modifier
