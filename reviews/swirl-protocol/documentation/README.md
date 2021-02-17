@@ -5,7 +5,7 @@
 * One misspelling in comments.
 * Many contracts are missing full natspec coverage.
 * __RECOMMENDATION__: Apply changes found below.
-* __RECOMMENDATION__: Add flow charts of how contracts interact with one another.
+* __RECOMMENDATION__: Add flow charts of how contracts interact with one another.  [Solidity Visual Developer](https://marketplace.visualstudio.com/items?itemName=tintinweb.solidity-visual-auditor) and [Surya](https://github.com/ConsenSys/surya) are two popular Consensys Diligence-powered tools which provide visual analysis of smart contracts.
 
 ## Scope
 ```
@@ -29,9 +29,10 @@
 ```
 
 ## File Review
+---
 ### `contracts/`
 #### `ChainLinkGasCalculator.sol`
-* Line 45 misspelled "whether"
+* [Line 45](https://github.com/tonic-finance/swirl-protocol/blob/87dfa63222fffe245ac66258c7afb9a9084e7e1c/contracts/ChainLinkGasCalculator.sol#L45) misspelled "whether"
 
 #### `DCAPoolFacade.sol`
 * Define state variables
@@ -46,9 +47,10 @@
     * `_ready()`
     * `getSchedule()`
     * `maxCycles()`
+
 #### `DCAVault.sol`
 * Define `Account` struct
-
+---
 ### `contracts/strategies/`
 #### `BadgerSettBuyStrategy.sol`
 N/A
@@ -56,7 +58,8 @@ N/A
 #### `OneInchBuyStrategy.sol`
 * Define state variables
 
-### `contracts/libs`
+---
+### `contracts/libs/`
 #### `Compression.sol`
 * Add `@title`, `@author`, and `@notice` natspec tags
 
