@@ -4,22 +4,29 @@
 ### Summary
 This review by the Best Practicers covers [Swirl Protocol](https://github.com/tonic-finance/swirl-protocol) on commit [`87dfa63`](https://github.com/tonic-finance/swirl-protocol/tree/87dfa63222fffe245ac66258c7afb9a9084e7e1c)
 
- [swirl-protocol](https://github.com/tonic-finance/swirl-protocol) at commit `X`.
-
 
 ## Results
-### Ownership
-#### Reviewed by:
+
+---
+## Ownership
+### Completed by:
+### Reviewed by:
 Explain results here
 
-### Reentrancy
-#### Reviewed by:
+---
+## Reentrancy
+### Completed by:
+### Reviewed by:
 Explain results here
 
-### Testing
-#### Reviewed by:
+---
+## Testing
+### Completed by:
+### Reviewed by:
 Explain results here
 
-### Documentation
-#### Reviewed by: Carl Farterson
+---
+## Documentation
+### Completed by: [carlfarterson](https://github.com/carlfarterson), [kjr217](https://github.com/kjr217)
+### Reviewed by:
 Explain results here
