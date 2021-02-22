@@ -1,4 +1,6 @@
-# swirl-protocol documentation / ownership
+# Swirl-protocol Ownership
+## Created by: [shortdoom](https://github.com/shortdoom)
+## Reviewed by: [kjr217](https://github.com/kjr217), [carlfarterson](https://github.com/carlfarterson)
 
 ## Summary
 * Swirl-protocol uses its own implementation of industry standard Openzeppelin AccessControl library, defined as `DCAAccessControl.sol`.
@@ -28,5 +30,3 @@ Role | Usage (as modifier) | About | Relationship with $ | Interaction with cont
 |**REGISTRAR**| `onlyRegistrar()` | Inserts pools into the registrar | No custody of tokens | <ul>`DCAPoolFacade.sol`<li>Insert a pool into the register</li></ul>
 |**SCHEDULER**| `onlyScheduler()` | Notifies vault of performed execution of token exchange | Indirect control, pushes changes to cumulative purchase results | <ul>`DCAVault.sol`<li>Notify vault of a performed execution</li></ul>
 |**VAULT**| `onlyVault()` | Controls which pools are scheduled to run with user tokens by adding/editing pools|Indirect control, defines which strategies are used for token purchases | <ul>`DCAScheduler.sol`<li>Adds a pool to the scheduler</li><li>Edit the schedules for a pool</li></ul>
-
-### TODO: Link contracts that use each modifier
