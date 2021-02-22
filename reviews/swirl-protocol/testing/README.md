@@ -37,7 +37,7 @@ Each of the contracts, `DCAPoolFacade.sol`, `DCAPoolFactory.sol`, `DCAScheduler.
 Tests using the chai matchers `calledOnContract` and `calledOnContractWith` have been separated out into separate files suffixed 'WithMock'. These tests are utilizing the waffle provider directly. See more details on the issue [here](https://github.com/nomiclabs/hardhat/issues/638)
 
 ## Integration Testing
-All the integration tests call `resetFork()` from `utils\integration.ts` which uses Alchemy to fork from a specific block number.
+All the integration tests call `resetFork()` from `utils/integration.ts` which uses Alchemy to fork from a specific block number.
 
 ### 1Inch.test.ts
 Deploys and tests the 1Inch buy strategy
