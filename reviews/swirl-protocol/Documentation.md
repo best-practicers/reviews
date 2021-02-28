@@ -1,11 +1,13 @@
-# documentation
-## By: [carlfarterson](https://github.com/carlfarterson), [kjr217](https://github.com/kjr217)
+# Documentation
+## Created by: [carlfarterson](https://github.com/carlfarterson), [kjr217](https://github.com/kjr217)
 
-## Summary & Recommendations
+## Summary
 * One misspelling in comments.
 * Many contracts are missing full natspec coverage.
-* __RECOMMENDATION__: Apply changes found below.
-* __RECOMMENDATION__: Add flow charts of how contracts interact with one another.  [Solidity Visual Developer](https://marketplace.visualstudio.com/items?itemName=tintinweb.solidity-visual-auditor) and [Surya](https://github.com/ConsenSys/surya) are two popular Consensys Diligence-powered tools which provide visual analysis of smart contracts.
+
+## Recommendations
+* Apply changes found below.
+* Add flow charts of how contracts interact with one another.  [Solidity Visual Developer](https://marketplace.visualstudio.com/items?itemName=tintinweb.solidity-visual-auditor) and [Surya](https://github.com/ConsenSys/surya) are two popular Consensys Diligence-powered tools which provide visual analysis of smart contracts.
 
 ## Scope
 ```

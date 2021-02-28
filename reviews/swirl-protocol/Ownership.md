@@ -1,4 +1,4 @@
-# Swirl-protocol Ownership
+# Ownership
 ## Created by: [shortdoom](https://github.com/shortdoom)
 ## Reviewed by: [kjr217](https://github.com/kjr217), [carlfarterson](https://github.com/carlfarterson)
 

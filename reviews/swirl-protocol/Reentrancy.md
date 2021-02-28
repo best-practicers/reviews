@@ -1,12 +1,13 @@
-# documentation
-## By: [Kevin Keaveney](https://github.com/kkeaveney)
+# Reentrancy
+## Created by: [Kevin Keaveney](https://github.com/kkeaveney)
+## Reviewed by: [shortdoom](https://github.com/shortdoom)
 
-## Summary / Recommendations
-Checks, Effects, Interactions pattern has been used throughout the contracts to prevent reentrancy. All events emitted have been 
-ordered accordingly to mitigate reentracy attacks.
+## Summary
+* Checks, Effects, Interactions pattern has been used throughout the contracts to prevent reentrancy.
+* All events emitted have been ordered accordingly to mitigate reentracy attacks.
 
-### Recommendations
-* Our first suggestion is .. Use of Open Zepplin OpenZeppelin ReentrancyGuard modifier
+## Recommendations
+* Use of Open Zepplin OpenZeppelin ReentrancyGuard modifier
 
 
 ## Scope
