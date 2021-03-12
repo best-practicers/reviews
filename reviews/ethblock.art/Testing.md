@@ -1,7 +1,36 @@
 # Testing
-## Done by:
+## Commit-SHA: [eeda149192144921c4ebbd74efa6d1f2c4e85cd8](https://github.com/adrianleb/blockart-contracts/commit/eeda149192144921c4ebbd74efa6d1f2c4e85cd8)
+## Done by: [mariuspod](https://github.com/mariuspod)
 ### Reviewed by:
 
+## Summary
+* Very few code paths tested.
+* Tests do not pass.
+* API keys to Etherscan and Alchemy published in git repo (might become a problem if opensourced)
+* Multiple vulnerabilities detected, slither report is attached.
+* Testing coverage is at 20% which is very low.
+
+## Recommendations
+* Fix the tests
+* Improve testing coverage, set your goal to 100%!
+* Try to add slither into the CI/CD pipeline to fail early
+* pass API keys via local ENV variables / files which are not persisted inside the repo to avoid unattended problems
+
+## Testing reports
+
+### Slither
+
+[slither](https://github.com/crytic/slither) is a powerful vulnerability detector that has been used to analyze all solidity contracts.
+Here are the reports:
+
+* [main report](reports/slither-main.md)
+* [human-summary](reports/slither-human-summary.md)
+
+### Solidity test code coverage
+
+With [solidity-coverage](https://hardhat.org/plugins/solidity-coverage.html) it's possible to test and improve on the testing code coverage:
+
+* [coverage report](reports/coverage.md)
 
 ### Initial observations
 * Tests only check for reverts
