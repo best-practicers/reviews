@@ -4,17 +4,24 @@
 ### Reviewed by:
 
 ## Summary
-* Very few code paths tested.
-* Tests do not pass.
-* API keys to Etherscan and Alchemy published in git repo (might become a problem if opensourced)
-* Multiple vulnerabilities detected, slither report is attached.
-* Testing coverage is at 20% which is very low.
+* There are only 4 tests in total and 2 of them are not passing.
+* Only some bad code paths tested via [expectRevert()](https://github.com/adrianleb/blockart-contracts/blob/master/test/sample-test.js#L83-L85)
+* No tests for good code paths.
+* API keys are published inside the git repo (might become a problem if opensourced):
+   * [ETHERSCAN_TOKEN](https://github.com/adrianleb/blockart-contracts/blob/master/hardhat.config.js#L38)
+   * [ALCHEMY_API_KEY](https://github.com/adrianleb/blockart-contracts/blob/master/hardhat.config.js#L45) 
+* Multiple vulnerabilities detected (2 high, 12 medium, 13 low), slither reports are attached in [/reports](reports)
+* Testing coverage is at 20% which is very low, many contracts are not tested at all.
+* Tests are for functions not in diagram
+    * Diagram helps for understanding
+    * Is diagram out of date?
+* Access control for diagram
 
 ## Recommendations
-* Fix the tests
+* Fix the tests and make sure that code which does not pass the tests is never merged into master. You can use github workflows to configure a build pipeline that runs all your tests first before it allows a PR to be merged into master.
 * Improve testing coverage, set your goal to 100%!
-* Try to add slither into the CI/CD pipeline to fail early
-* pass API keys via local ENV variables / files which are not persisted inside the repo to avoid unattended problems
+* Try to add slither into the CI/CD pipeline to fail early and handle security issues
+* Pass API keys via local ENV variables / files which are not persisted inside the repo to avoid unattended problems
 
 ## Testing reports
 
@@ -31,13 +38,6 @@ Here are the reports:
 With [solidity-coverage](https://hardhat.org/plugins/solidity-coverage.html) it's possible to test and improve on the testing code coverage:
 
 * [coverage report](reports/coverage.md)
-
-### Initial observations
-* Tests only check for reverts
-* Tests are for functions not in diagram
-    * Diagram helps for understanding
-    * Is diagram out of date?
-* Access control for diagram
 
 ### Running tests
 ```
