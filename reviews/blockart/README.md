@@ -73,17 +73,17 @@ BlockStyle - created by Creative Coders and used in the creation of BlockArts
 * Only owner (of Style) can setCanvasURI, canvasURI (TO CHECK)
 * Setters & Getters are public
 
-BlockArt and ERC721Ref are domain of Creators
+### BlockArt and ERC721Ref are relevant for Creators
 
 BArt - minted by creators using a block number and BlockStyles.
 
-        BArt is fully controled by contract owner
-        onlyOwner can setContractURI, setTokenURI, burnToken
+* BArt is fully controled by contract owner
+* onlyOwner can setContractURI, setTokenURI, burnToken
 
-    ERC721Ref - Minting of an NFT-piece using for Creator from blockNumber + Styles (from Creative Coder)
+*ERC721Ref - Minting of an NFT-piece using for Creator from blockNumber + Styles (from Creative Coder)*
 
-        onlyOwner can mint new NFT-piece with owned Style
-        onlyOwner can setContractURI
+* onlyOwner can mint new NFT-piece with owned Style
+* onlyOwner can setContractURI
 
 ### BFactory - interface for minting of Styles and Art for all external users. Main contract for blockart.
 
