@@ -3,7 +3,7 @@
 
 ## Summary
 * Address the issues provided in the file review section
-* Lots of natspec missing and unorthodoxically used throughout.
+* Lots of [natspec](https://docs.soliditylang.org/en/v0.7.5/natspec-format.html) missing and unorthodoxically used throughout.
 
 ## Scope
 ```
@@ -19,10 +19,14 @@
 ## File Review
 ### `README.md`
 * Overall, readme is quite useful.
-* In BArt section, supplyPerBlock and supplyPerStyle misspelling of 'giver', should be 'given'?
-* In BArt section, artToValue misspelling of 'calculatin' should be 'calculating'
-* In BFactory, for the last 3 variable names in Store, make them consistent with the contract, i.e. in the contract they go by initials 'scfb', 'psfb', 'asl'
-* I like the flow charts, how the arrows are laid out in the Contracts flow chart could be less hectic.
+* In BArt section, supplyPerBlock and supplyPerStyle misspelling of `giver`, should be `given`?
+* In BArt section, artToValue misspelling of `calculatin` should be `calculating`
+* In BFactorysection , for the last 3 variable names in Store, make them consistent with the contract, i.e. in the contract they go by initials `scfb`, `psfb`, `asl`
+* Flow charts
+    * Helpful with outlining structure / functionality
+    * Arrows in `Contracts` chart could be less hectic
+    * `Contracts` chart missing functions
+
 ---
 ### `contracts/`
 #### `BArt.sol`
