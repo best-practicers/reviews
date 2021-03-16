@@ -26,6 +26,7 @@
     * Helpful with outlining structure / functionality
     * Arrows in `Contracts` chart could be less hectic
     * `Contracts` chart missing functions
+    * Flow charts would benefit from including the version so it is clear which model is current
 
 ---
 ### `contracts/`
