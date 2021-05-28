@@ -7,7 +7,7 @@ This review by the Best Practicers covers [weiWard](https://www.weiward.org/) on
 ---
 
 ## Reviews
-### [Ownership](./Access.md)
+### [Access Control](./Access.md)
 ### [OpenZeppelin](./OpenZeppelin.md)
 ### [Testing](./Testing.md)
 ### [Documentation](./Documentation.md)
