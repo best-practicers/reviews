@@ -1,4 +1,4 @@
-# Documentation
+# OpenZeppelin
 ## Created by:
 
 ## Summary
