@@ -67,20 +67,6 @@
 ```
 
 ## File Review
-### `README.md`
 
-### `contracts/`
-
-### `access/`
-
-#### `<contract>.sol`
-
-#### `<contract>.sol`
-
-#### `<contract>.sol`
-
-#### `<contract>.sol`
-
-#### `<contract>.sol`
 
 ...
