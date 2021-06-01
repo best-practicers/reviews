@@ -79,3 +79,59 @@ Similar to unit test 14 *'when amountEthIn > GENESIS_AMOUNT - totalGiven'*, no f
 From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
 
 > A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
+# Failed Unit Test 16 message:
+
+![](./images/failed_unit_test_16.png)
+
+### Failing code (this is more speculation because I don't fully grasp some of the technical intricacies of *ETHtxAMM.sol*):
+
+Test *'when amountETHIn < GENESIS_AMOUNT'* (line 1050 of *ETHmxMinter.test.ts*) is failing at line 1060, which has the following:
+
+>expect(await contract.ethtxFromEth(ethIn)).to.eq(expected);
+
+The test expects the output of *ethtxFromEth()* (line 417 in *ETHmxMinter.sol*) to equal the following (line 1054 of *ETHmxMinter.test.ts*):
+
+> const expected = parseETHtx('226.757369614512471655');
+
+The called function *ethtxFromEth()* has the following at lines 428-429:
+
+>IETHtxAMM ammHandle = IETHtxAMM(_ethtxAMM);
+>
+>(uint256 collat, uint256 liability) = ammHandle.cRatio();
+
+These create an instance of *ETHtxAMM.sol* and call the function *cRatio()* from said file (found at line 270).
+
+The value of the *liability* variable is derived as the value of (line 278, inside of *cRatio()*):
+
+> denominator = ethToExactEthtx(ethtxOutstanding());
+
+When you follow the path of the rest of the called functions, it is clear it is simply arithmetic that calculates ETH to ETHtx. Therefore, the value of *liability* (which is really the value of *denominator*) should only be zero at genesis, before ETHtx have been minted.
+
+This is important to note, because inside of *ethtxFromEth()*, there is the following conditional (line 442):
+
+> if (liability == 0) {...}
+
+Which it should be, because the test is setting up a simulation taking place before *GENESIS_START* (line 1018 in ETHmxMinter.test.ts):
+
+> const unixTime = GENESIS_START - 604800;
+
+Therefore, we go inside this conditional, which then finds another conditional (line 444 in *ETHmxMinter.sol*):
+
+> if (_inGenesis) {...}
+
+If we don't pass the conditional, it reaches line 457, which is as follows:
+
+>return _ethToEthtx(basePrice, amountETHIn);
+
+If we do pass the conditional, it reaches line 454:
+
+>return _ethToEthtx(basePrice.mul(2), amountETHIn);
+
+With the only difference of the two being whether *basePrice* is multiplied by two. Seeing as how the test expected the actual output to be halved if we are *_inGenesis*, the speculation is that the test is supposed to enter the conditional and have it's base price doubled, thus giving half as many ETHtx.
+
+This is further supported by what is stated in the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+
+> A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
+Also worhty of noting, none of the code in the unit test *'when amountETHIn < GENESIS_AMOUNT'* prior to this changed the value of the boolean *_inGenesis* to *true*. To further fuel this speculation, this is not the first instance of assuming the default value of a boolean to be *true*, therefore there is strong confidence in the speculation of why it is erroring out in this manner.
