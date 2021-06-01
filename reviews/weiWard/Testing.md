@@ -63,3 +63,19 @@ The reason for this, is because the default value of a boolean in Solidity is *f
 From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
 
 > A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
+# Failed Unit Test 15 message:
+
+![](./images/failed_unit_test_15.png)
+
+### Failing code:
+
+The test *'should be before genesis'* at line 1035 of *ETHmxMinter.test.ts*, has the following at line 1047:
+
+>expect(await contract.inGenesis(), 'inGenesis mismatch').to.be.true;
+
+Similar to unit test 14 *'when amountEthIn > GENESIS_AMOUNT - totalGiven'*, no function call before it alters the default value of _inGenesis from *ETHmxMinterData.sol* from *false* to *true*. Therefore, the error is the same, that perhaps it was assumed the default value of a boolean in Solidity is *true*.
+
+From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+
+> A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
