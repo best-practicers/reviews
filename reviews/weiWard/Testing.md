@@ -301,3 +301,53 @@ As you can see, it is not given the value of *true*, therefore it is, by default
 From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
 
 > A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
+
+# Failed Unit Test 21 message:
+
+![](./images/failed_unit_test_21.png)
+
+### Failing code:
+
+Test *'when amountETHIn == GENESIS_AMOUNT'* in *ETHmxMinter.test.ts* errors out at line 1149. The line is as follows:
+
+    expect(await contract.ethtxFromEth(ethIn)).to.eq(expected);
+
+The line errors out at the same point as the other, at the conditional at line 444 of *ETHmxMinter.sol*, which is as follows:
+
+    if (_inGenesis) {...}
+
+It is failing because the default value of a boolean in Solidity is *false*, and *_inGenesis* was instantiated as follows:
+
+    bool internal _inGenesis;
+
+As you can see, it is not given the value of *true*, therefore it is, by default, *false*.
+
+From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+
+> A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
+
+# Failed Unit Test 22 message:
+
+![](./images/failed_unit_test_22.png)
+
+### Failing code:
+
+Test *'when amountETHIn > GENESIS_AMOUNT'* in *ETHmxMinter.test.ts* errors out at line 1162. The line is as follows:
+
+    expect(await contract.ethtxFromEth(ethIn)).to.eq(expected);
+
+The line errors out at the same point as the other, at the conditional at line 444 of *ETHmxMinter.sol*, which is as follows:
+
+    if (_inGenesis) {...}
+
+It is failing because the default value of a boolean in Solidity is *false*, and *_inGenesis* was instantiated as follows:
+
+    bool internal _inGenesis;
+
+As you can see, it is not given the value of *true*, therefore it is, by default, *false*.
+
+From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+
+> A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
