@@ -351,3 +351,36 @@ As you can see, it is not given the value of *true*, therefore it is, by default
 From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
 
 > A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
+
+# Failed Unit Test 23 message:
+
+![](./images/failed_unit_test_23.png)
+
+### Failing code:
+
+Test *'zero ETHtx'* in *ETHmxMinter.test.ts* errors out at line 1585. The line is as follows:
+
+    expect(await ethtx.totalSupply()).to.eq(0);
+
+However, because the call to the *totalSupply()* function does not alter the state of any variables, but is simply a getter function, it is important to look above for another function call that could potentially be causing the issue. This leads to line 1584, which is as follows:
+
+    await contract.mint({ value: amount });
+
+This line mints new tokens in the amount of *amount*, which was declared in line 1542 as follows:
+
+    const amount = parseEther('10');
+
+When inspecting the *mint()* function in *ETHmxMinter.sol*, found at line 155, it is important to note the following conditional, at line 167:
+
+    if (_inGenesis) {...}
+
+Which is the same type of conditional that was causing errors before. As previously stated, a boolean's default value is *false*, unless otherwise specified. Seeing how *_inGenesis* was instantiated as follows in *ETHmxMinterData.sol* at line 46:
+
+    bool internal _inGenesis;
+
+Therefore, the conditional is not being passed since it sees that the value of *_inGenesis* is *false*.
+
+From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+
+> A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
