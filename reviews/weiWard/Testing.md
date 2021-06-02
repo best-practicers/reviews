@@ -14,7 +14,7 @@ Which calls the *ethmxFromEth()* function from *ETHmxMinter.sol*, which on line 
 
     uint256 amountOut = _ethmxCurve(amountETHIn, mp);
 
-(I am assuming the math inside of *_ethmxCurve* gives *amountOut* a value of *20 ETHmx*)
+(the assumption being that the math inside of *_ethmxCurve* gives *amountOut* a value of *20 ETHmx*)
 
 After which, it checks the following conditional:
 
@@ -22,7 +22,7 @@ After which, it checks the following conditional:
 
 That ends in
 
-    amountOut.mul(2);
+    return amountOut.mul(2);
 
 However, if it continues without going inside of the conditional, *ethmxFromEth()* ends with:
 
@@ -30,11 +30,15 @@ However, if it continues without going inside of the conditional, *ethmxFromEth(
 
 without multiplying by 2, which would return the *20 ETHmx* , rather than the actual *40 ETHmx* the test expected.
 
-The cause of the error is because in Solidity, you cannot check a truthy value this way.
+The cause of the error is because in Solidity, a boolean's value is by default false.
 
-From the [Solditiy docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
 
->Note that there is no type conversion from non-boolean to boolean types as there is in C and JavaScript, so if (1) { ... } is not valid Solidity.
+> A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
+And *_inGenesis* is instantiated and exported from *ETHmxMinderData.sol* in line 46 as follows:
+
+    bool internal _inGenesis;
 
 # Failed Unit Test 14 message:
 
@@ -62,6 +66,17 @@ From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structu
 
 > A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
 
+And *_inGenesis* is instantiated and exported from *ETHmxMinderData.sol* in line 46 as follows:
+
+    bool internal _inGenesis;
+
+Then returned from the getter function *inGenesis()* in *ETHmxMinter.sol* in 493 as follows:
+
+    function inGenesis() external view virtual override returns (bool) {
+		return _inGenesis;
+	}
+
+
 # Failed Unit Test 15 message:
 
 ![](./images/failed_unit_test_15.png)
@@ -77,6 +92,17 @@ Similar to unit test 14 *'when amountEthIn > GENESIS_AMOUNT - totalGiven'*, no f
 From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
 
 > A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
+And *_inGenesis* is instantiated and exported from *ETHmxMinderData.sol* in line 46 as follows:
+
+    bool internal _inGenesis;
+
+Then returned from the getter function *inGenesis()* in *ETHmxMinter.sol* in 493 as follows:
+
+    function inGenesis() external view virtual override returns (bool) {
+		return _inGenesis;
+	}
+
 
 # Failed Unit Test 16 message:
 
@@ -99,9 +125,18 @@ The called function *ethtxFromEth()* has the following at lines 428-429:
 
 These create an instance of *ETHtxAMM.sol* and call the function *cRatio()* from said file (found at line 270).
 
-The value of the *liability* variable is derived as the value of (line 278, inside of *cRatio()*):
+The value of the *liability* variable is derived as the value of the returned variable *denominator* from *cRatio()* (line 278):
 
-    denominator = ethToExactEthtx(ethtxOutstanding());
+    function cRatio()
+		public
+		view
+		virtual
+		override
+		returns (uint256 numerator, uint256 denominator)
+	{
+		numerator = ethSupply();
+		denominator = ethToExactEthtx(ethtxOutstanding());
+	}
 
 When you follow the path of the rest of the called functions, it is clear it is simply arithmetic that calculates ETH to ETHtx. Therefore, the value of *liability* (which is really the value of *denominator*) should only be zero at genesis, before ETHtx have been minted.
 
@@ -113,7 +148,11 @@ Which it should be, because the test is setting up a simulation taking place bef
 
     const unixTime = GENESIS_START - 604800;
 
-Therefore, we go inside this conditional, which then finds another conditional (line 444 in *ETHmxMinter.sol*):
+With *GENESIS_START* being instantiated in *conversions.ts* line 10, as follows:
+
+    export const GENESIS_START = 1620655200; // 05/10/2021 1400 UTC
+
+Therefore, we go inside the previously mentioned conditional, which then finds another conditional (line 444 in *ETHmxMinter.sol*):
 
     if (_inGenesis) {...}
 
@@ -125,14 +164,17 @@ If we do pass the conditional, it reaches line 454:
 
     return _ethToEthtx(basePrice.mul(2), amountETHIn);
 
-With the only difference of the two being whether *basePrice* is multiplied by two. Seeing as how the test expected the actual output to be halved if we are *_inGenesis*, the speculation is that the test is supposed to enter the conditional and have it's base price doubled, thus giving half as many ETHtx.
+With the only difference of the two being whether *basePrice* is multiplied by two. Seeing as how the test expected the actual output to be halved if we *_inGenesis = true*, the speculation is that the test is supposed to enter the conditional and have it's base price doubled, thus giving half as many ETHtx.
 
-This is further supported by what is stated in the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+The reason for this, is because the default value of a boolean in Solidity is *false*.
+
+From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
 
 > A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
 
-Also worthy of noting, none of the code in the unit test *'when amountETHIn < GENESIS_AMOUNT'* prior to this changed the value of the boolean *_inGenesis* to *true*. To further fuel this speculation, this is not the first instance of assuming the default value of a boolean to be *true*, therefore there is strong confidence in the speculation of why it is erroring out in this manner.
+And *_inGenesis* is instantiated and exported from *ETHmxMinderData.sol* in line 46 as follows:
 
+    bool internal _inGenesis;
 # Failed Unit Test 17 message:
 
 ![](./images/failed_unit_test_17.png)
@@ -143,7 +185,7 @@ Test *'when amountETHIn == GENESIS_AMOUNT'* is erroring out in a very similar ma
 
     expect(await contract.ethtxFromEth(ethIn)).to.eq(expected);
 
-and lines 1066-1067 declare both *ethIn* and *expected* as follows:
+and lines 1066-1067 declare both *ethIn* and *expected* equal as follows:
 
     const ethIn = GENESIS_AMOUNT;
     const expected = parseETHtx('68027.210884353741496598');
@@ -156,12 +198,22 @@ Because the test is failing at the same point unit test 16 was failing, which is
 
     if (_inGenesis) {...}
 
-It appears the error is again the fact that the conditional was written to assume *_inGenesis* is by default true, which would then proceed to increase the base price of ETHtx by 2X, with line 454, which reads as follows:
+It appears the error is again the fact that the conditional was written such that it would prove a boolean value to be *true*. If *_inGenesis* is by default true, which would then proceed to increase the base price of ETHtx by 2X, with line 454, which reads as follows:
 
     return _ethToEthtx(basePrice.mul(2), amountETHIn);
 
+Instead, it reads the following line at 457 as:
+
+    return _ethToEthtx(basePrice, amountETHIn);
+
 It would be reasonable to assume that the error is, again, being caused by the correct assumption a boolean's default value is *true*.
 
-As a reminder, here is what is stated in the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+The reason for this, is because the default value of a boolean in Solidity is *false*.
+
+From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
 
 > A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
+And *_inGenesis* is instantiated and exported from *ETHmxMinderData.sol* in line 46 as follows:
+
+    bool internal _inGenesis;
