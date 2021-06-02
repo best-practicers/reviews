@@ -87,7 +87,7 @@ The test *'should be before genesis'* at line 1035 of *ETHmxMinter.test.ts*, has
 
     expect(await contract.inGenesis(), 'inGenesis mismatch').to.be.true;
 
-Similar to unit test 14 *'when amountEthIn > GENESIS_AMOUNT - totalGiven'*, no function call before it alters the default value of _inGenesis from *ETHmxMinterData.sol* from *false* to *true*. Therefore, the error is the same, that perhaps it was assumed the default value of a boolean in Solidity is *true*.
+Similar to unit test 14 *'when amountEthIn > GENESIS_AMOUNT - totalGiven'*, no function call before it alters the default value of *_inGenesis* from *ETHmxMinterData.sol* from *false* to *true*. Therefore, the error is the same, that perhaps it was assumed the default value of a boolean in Solidity is *true*.
 
 From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
 
@@ -252,3 +252,52 @@ From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structu
 
 > A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
 
+# Failed Unit Test 19 message:
+
+![](./images/failed_unit_test_19.png)
+
+### Failing code:
+
+Test *'should be in genesis'* at line 1123 of *ETHmxMinter.test.ts*. The line is as follows:
+
+    expect(await contract.inGenesis(), 'inGenesis mismatch').to.be.true;
+
+Similar to unit test 15 *'should be before genesis'*, no function call before it alters the default value of *_inGenesis* from *ETHmxMinterData.sol* from *false* to *true*. Therefore, the error is the same, that perhaps it was assumed the default value of a boolean in Solidity is *true*.
+
+From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+
+> A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
+And *_inGenesis* is instantiated and exported from *ETHmxMinderData.sol* in line 46 as follows:
+
+    bool internal _inGenesis;
+
+Then returned from the getter function *inGenesis()* in *ETHmxMinter.sol* in 493 as follows:
+
+    function inGenesis() external view virtual override returns (bool) {
+		return _inGenesis;
+	}
+
+# Failed Unit Test 20 message:
+
+![](./images/failed_unit_test_20.png)
+
+### Failing code:
+
+Test *'when amountETHIn < GENESIS_AMOUNT'* in *ETHmxMinter.test.ts* errors out at line 1136. The line is as follows:
+
+    expect(await contract.ethtxFromEth(ethIn)).to.eq(expected);
+
+The line errors out at the same point as the other, at the conditional at line 444 of *ETHmxMinter.sol*, which is as follows:
+
+    if (_inGenesis) {...}
+
+It is failing because the default value of a boolean in Solidity is *false*, and *_inGenesis* was instantiated as follows:
+
+    bool internal _inGenesis;
+
+As you can see, it is not given the value of *true*, therefore it is, by default, *false*.
+
+From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+
+> A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
