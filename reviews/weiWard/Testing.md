@@ -175,6 +175,8 @@ From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structu
 And *_inGenesis* is instantiated and exported from *ETHmxMinderData.sol* in line 46 as follows:
 
     bool internal _inGenesis;
+
+
 # Failed Unit Test 17 message:
 
 ![](./images/failed_unit_test_17.png)
@@ -217,3 +219,36 @@ From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structu
 And *_inGenesis* is instantiated and exported from *ETHmxMinderData.sol* in line 46 as follows:
 
     bool internal _inGenesis;
+
+# Failed Unit Test 18 message:
+
+![](./images/failed_unit_test_18.png)
+
+### Failing code:
+
+Test *'when amountETHIn > GENESIS_AMOUNT'* at line 1086 of *ETHmxMinter.test.ts*. The line is as follows:
+
+    expect(await contract.ethtxFromEth(ethIn)).to.eq(expected);
+
+With *ethIn* and *expected* being instantiated at lines 1079-1081 as follows:
+
+    const ethOver = parseEther('10');
+    const ethIn = GENESIS_AMOUNT.add(ethOver);
+    const expected = parseETHtx('68480.725623582766439908');
+
+With *GENESIS_AMOUNT* being instantiated and exported from *conversions.ts* at line 9 as follows:
+
+    export const GENESIS_AMOUNT = parseEther('3000');
+
+All of this ultimately calls *ethtxFromEth()* inside of *ETHmxMinter.sol*, which similar to before, reaches this conditional at line 444:
+
+    if (_inGenesis) {...}
+
+Therefore, it appears the problem is, once again, that *_inGenesis* is incorrectly assumed to equal *true*, which it is not, according to line 46 in *ETHmxMinterData.sol* that instantiated it as follows:
+
+    bool internal _inGenesis;
+
+From the [Solidity docs](https://docs.soliditylang.org/en/latest/control-structures.html):
+
+> A variable which is declared will have an initial default value whose byte-representation is all zeros. The “default values” of variables are the typical “zero-state” of whatever the type is. For example, the default value for a bool is false.
+
