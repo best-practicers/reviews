@@ -99,18 +99,18 @@
 * L251 - function pause does not have an associated NatSpec comment
 * L255 - function recoverERC20 does not have an associated NatSpec comment
 * L336 - function unpause does not have an associated NatSpec comment
-* L343 - function ethmx does not have an associated NatSpec comment
-* L347 - function ethmxMintParams does not have an associated NatSpec comment
+* L342 - function ethmx does not have an associated NatSpec comment
+* L346 - function ethmxMintParams does not have an associated NatSpec comment
 * L357 - function ethmxFromEth does not have an associated NatSpec comment
-* L390 - function ethmxFromEthtx does not have an associated NatSpec comment
-* L400 - function ethtx does not have an associated NatSpec comment
-* L404 - function ethtxMintParams does not have an associated NatSpec comment
-* L414 - function ethtxAMM does not have an associated NatSpec comment
-* L418 - function ethtxFromEth does not have an associated NatSpec comment
-* L494 - function inGenesis does not have an associated NatSpec comment
-* L508 - function liquidityPoolsAt does not have an associated NatSpec comment
-* L518 - function lpRecipient does not have an associated NatSpec comment
-* L522 - function lpShare does not have an associated NatSpec comment
+* L389 - function ethmxFromEthtx does not have an associated NatSpec comment
+* L399 - function ethtx does not have an associated NatSpec comment
+* L403 - function ethtxMintParams does not have an associated NatSpec comment
+* L413 - function ethtxAMM does not have an associated NatSpec comment
+* L417 - function ethtxFromEth does not have an associated NatSpec comment
+* L493 - function inGenesis does not have an associated NatSpec comment
+* L507 - function liquidityPoolsAt does not have an associated NatSpec comment
+* L517 - function lpRecipient does not have an associated NatSpec comment
+* L521 - function lpShare does not have an associated NatSpec comment
 
 ##### `ETHtxAMM/`
 
@@ -170,12 +170,12 @@
 * L82 - Comment exists on function name, but could make better use of tags
 * L90 - Comment exists on function symbol, but could make better use of tags
 * L107 - Comment exists on function decimals, but could make better use of tags
-* L114 - function totalSupply contains a reference to IERC20 - might be better if it was specced properly
-* L121 - function balanceOf contains a reference to IERC20 - might be better if it was specced properly
+* L114 - function totalSupply contains a reference to IERC20 - could use `@inheritdoc`
+* L121 - function balanceOf contains a reference to IERC20 - could use `@inheritdoc`
 * L139 - Comment exists on function transfer, but could make better use of tags
-* L152 - function allowance contains a reference to IERC20 - might be better if it was specced properly
-* L163 - function approve contains a reference to IERC20 - might be better if it was specced properly
-* L192 - function transferFrom contains a reference to IERC20 - might be better if it was specced properly
+* L152 - function allowance contains a reference to IERC20 - could use `@inheritdoc`
+* L169 - function approve contains a reference to IERC20 - could use `@inheritdoc`
+* L192 - function transferFrom contains a reference to IERC20 - could use `@inheritdoc`
 * L221 - Comment exists on function increaseAllowance, but could make better use of tags
 * L248 - Comment exists on function decreaseAllowance, but could make better use of tags
 
@@ -183,12 +183,12 @@
 * L94 - Comment exists on function name, but could make better use of tags
 * L102 - Comment exists on function symbol, but could make better use of tags
 * L119 - Comment exists on function decimals, but could make better use of tags
-* L126 - function totalSupply contains a reference to IERC20 - might be better if it was specced properly
-* L133 - function balanceOf contains a reference to IERC20 - might be better if it was specced properly
+* L126 - function totalSupply contains a reference to IERC20 - could use `@inheritdoc`
+* L133 - function balanceOf contains a reference to IERC20 - could use `@inheritdoc`
 * L151 - Comment exists on function transfer, but could make better use of tags
-* L164 - function allowance contains a reference to IERC20 - might be better if it was specced properly
-* L181 - function approve contains a reference to IERC20 - might be better if it was specced properly
-* L204 - function transferFrom contains a reference to IERC20 - might be better if it was specced properly
+* L164 - function allowance contains a reference to IERC20 - could use `@inheritdoc`
+* L181 - function approve contains a reference to IERC20 - could use `@inheritdoc`
+* L204 - function transferFrom contains a reference to IERC20 - could use `@inheritdoc`
 * L233 - Comment exists on function increaseAllowance, but could make better use of tags
 * L260 - Comment exists on function decreaseAllowance, but could make better use of tags
 
@@ -200,12 +200,12 @@
 * L67 - function burn does not have an associated NatSpec comment
 * L71 - function mintTo does not have an associated NatSpec comment
 * L81 - function pause does not have an associated NatSpec comment
-* L82 - function recoverERC20 does not have an associated NatSpec comment
+* L85 - function recoverERC20 does not have an associated NatSpec comment
 * L94 - function setMinter does not have an associated NatSpec comment
 * L99 - function unpause does not have an associated NatSpec comment
 * L105 - function minter does not have an associated NatSpec comment
 * L109 - function name does not have an associated NatSpec comment
-* L113 - Comment exists on function symbol, but could make better use of tags
+* L113 - function symbol could use `@inheritdoc`
 
 ##### `ETHtx/`
 
@@ -218,7 +218,7 @@
 * L126 - function unpause does not have an associated NatSpec comment
 * L132 - function minter does not have an associated NatSpec comment
 * L136 - function name does not have an associated NatSpec comment
-* L140 - Comment exists on function symbol, but could make better use of tags
+* L140 - function symbol could use `@inheritdoc`
 
 
 
