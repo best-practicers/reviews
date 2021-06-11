@@ -298,7 +298,7 @@
 - @dev stagss can be changed to @notice
 - "Requirement: " tags can be replaced with @params
 - Comment on line 70 can be made into a @dev
-- OpenZepplen \_\_gap variable declaration at bottom of contract should be ideally added to the top of contract
+- OpenZeppelin \_\_gap variable declaration at bottom of contract should be ideally added to the top of contract
 - Missing most NatSpec tags
 
 #### `/ETHmx`
