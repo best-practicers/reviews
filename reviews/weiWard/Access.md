@@ -1,11 +1,14 @@
 # Access Control
+
 ## Created by:
 
 ## Summary
-* TLDR of the findings
-* 
+
+- TLDR of the findings
+-
 
 ## Scope
+
 ```
 ├── README.md
 └── contracts
@@ -31,10 +34,10 @@
             └── ETHmxRewardsData.sol
         ├── ETHtxRewardsManager
             ├── ETHtxRewardsManager.sol
-            └── ETHtxRewardsManagerData.sol  
+            └── ETHtxRewardsManagerData.sol
         ├── LPRewards
             ├── LPRewards.sol
-            └── LPRewardsData.sol    
+            └── LPRewardsData.sol
         ├── RewardsManager
             ├── RewardsManager.sol
             ├── RewardsManagerAuto.sol
@@ -43,41 +46,48 @@
             ├── MooniFactory.sol
             ├── Mooniswap.sol
             └── UniERC20.sol
-        ├── FeeLogic.sol  
+        ├── FeeLogic.sol
         ├── LPRewardsAuto.sol
         ├── ManagedRewardsPoolInstant.sol
         ├── RewardsPool.sol
         ├── RewardsPoolInstant.sol
         ├── ValuePerMoonV1.sol
-        └── ValuePerUNIV2.sol   
+        └── ValuePerUNIV2.sol
     ├── tokens
         ├── ERC20
             ├── ERC20.sol
             └── ERC20Upgradeable.sol
         ├── ERC20TxFee
             ├── ERC20TxFee.sol
-            └── ERC20TxFeeUpgradeable.sol     
+            └── ERC20TxFeeUpgradeable.sol
         ├── ETHmx
             ├── ETHmx.sol
-            └── ETHmxData.sol    
+            └── ETHmxData.sol
         └── ETHtx
             ├── ETHtx.sol
-            └── ETHtxData.sol  
+            └── ETHtxData.sol
     └── Imports.sol
 ```
 
 ## File Review
+
 ### `README.md`
 
 ### `contracts/`
 
 ### `access/`
 
-#### `<contract>.sol`
+#### `RewardsPool.sol`
 
-#### `<contract>.sol`
+- Overall, looks good. Functions that need the onlyOwner modifier have it.
 
-#### `<contract>.sol`
+#### `RewardsManager/RewardsManager.sol`
+
+- Overall, looks good. Functions that need the onlyOwner modifier have it.
+
+#### `ETHtxRewardsManager.sol`
+
+- convertETHx could do with some sort of safe guard???
 
 #### `<contract>.sol`
 
