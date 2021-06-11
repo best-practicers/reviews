@@ -21,8 +21,6 @@
 - Recommend adding links to platform, whitepaper, and deployed contracts on mainnet for convenience of devs and users who want more info
 - Current test suit does not pass all tests
 
-## Scope
-
 ```
 ├── README.md
 └── contracts
