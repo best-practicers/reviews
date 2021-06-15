@@ -183,6 +183,43 @@ Contract `ERC20Two` on L5:
 `constructor()` L6:
 * Correctly passes strings to `ERC20` constructor on L6.
 
+### `contracts/ERC721Four.sol`
+
+Contract `ERC721Four` on L7:
+* Correctly inherits the `ERC721` from its respective solidity file.
+* Correctly implements `Counters` on L8.
+
+`constructor()` L11:
+* Correctly passes strings to `ERC721` constructor on L11.
+
+### `contracts/ERC721One.sol`
+
+Contract `ERC721One` on L7:
+* Correctly inherits the `ERC721` from its respective solidity file.
+* Correctly implements `Counters` on L8.
+
+`constructor()` L11:
+* Correctly passes strings to `ERC721` constructor on L11.
+
+### `contracts/ERC721Three.sol`
+
+Contract `ERC721Three` on L7:
+* Correctly inherits the `ERC721` from its respective solidity file.
+* Correctly implements `Counters` on L8.
+
+`constructor()` L11:
+* Correctly passes strings to `ERC721` constructor on L11.
+
+### `contracts/ERC721Two.sol`
+
+Contract `ERC721Two` on L7:
+* Correctly inherits the `ERC721` from its respective solidity file.
+* Correctly implements `Counters` on L8.
+
+`constructor()` L11:
+* Correctly passes first string, `"ERC721Two"` to `ERC721` constructor on L11.
+* Second string, `"One"` might be supposed to be `"Two"` on L11.
+
 ### `contracts/Pausable.sol`
 
 Contract `BatchSwap` on L6:
