@@ -6,7 +6,7 @@
 
 ## Summary
 
-- Contracts implement a OpenZeppelin Ownable along with a custom Pausable which inherits from OpenZeppelin ownable.
+- Contracts implement OpenZeppelin Ownable along with a custom Pausable which inherits from OpenZeppelin ownable.
 - Owner on contracts has the ability to set possibly malicious dapps addresses which could be an attack vector. Owner on contracts must be trusted.
 - Guards don't exist to prevent transfers to the burned address on some functions
 
