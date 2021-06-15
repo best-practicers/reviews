@@ -8,62 +8,66 @@
 
 ### `contracts/AXBridge.sol`
 
-Contract *AXBridge* on L11:
-* Correctly inherits the *Ownable* contract on L11.
-* Correctly adds *onlyOwner* modifier on L12.
+Contract `AXBridge` on L11:
+* Correctly inherits the `Ownable` contract on L11.
+* Correctly adds `onlyOwner` modifier on L12.
 
 ### `contracts/BatchSwap.sol`
 
-Contract *BatchSwap* on L63:
-* Correctly inherits the *Ownable*, *Pausable*, *IERC721Receiver*, *IERC1155Receiver* modifier from their respective solidity files.
+### Note:
 
-* Correctly implements *Counters* on L79.
+L13-L30, created own version of ERC20, ERC721, and ERC1155 interfaces rather than using Open Zeppelin's interfaces for the same ERC standards. Does not have full functionality of the Open Zeppelin interfaces, so perhaps that is why they did not utilize them, but they could have.
 
-* Correctly implements *SafeMath* on L80.
+Contract `BatchSwap` on L63:
+* Correctly inherits the `Ownable`, `Pausable`, `IERC721Receiver`, `IERC1155Receiver` modifier from their respective solidity files.
 
-Function *createSwapIntent()* L141:
-* Correctly adds *whenNotPaused* modifier on L141.
-* Correctly implement *add()* from *SafeMath* on L144.
+* Correctly implements `Counters` on L79.
 
-Function *closeSwapIntent()* L197:
-* Correctly adds *whenNotPaused* modifier on L197.
-* Correctly implement *add()* from *SafeMath* on L202.
-* Correctly implement *add()* from *SafeMath* on L204.
-* Correctly implement *add()* from *SafeMath* on L205.
+* Correctly implements `SafeMath` on L80.
 
-Function *setCryptoPunkAddress()* L309:
-* Correctly adds *onlyOwner* modifier on L309.
+Function `createSwapIntent()` L141:
+* Correctly adds `whenNotPaused` modifier on L141.
+* Correctly implement `add()` from *SafeMath* on L144.
 
-Function *setTradeSquadAddress()* L326:
-* Correctly adds *onlyOwner* modifier on L326.
+Function `closeSwapIntent()` L197:
+* Correctly adds `whenNotPaused` modifier on L197.
+* Correctly implement `add()` from *SafeMath* on L202.
+* Correctly implement `add()` from *SafeMath* on L204.
+* Correctly implement `add()` from *SafeMath* on L205.
 
-Function *setVaultAddress()* L331:
-* Correctly adds *onlyOwner* modifier on L331.
+Function `setCryptoPunkAddress()` L309:
+* Correctly adds `onlyOwner` modifier on L309.
 
-Function *setDappRelation()* L336:
-* Correctly adds *onlyOwner* modifier on L336.
+Function `setTradeSquadAddress()` L326:
+* Correctly adds `onlyOwner` modifier on L326.
 
-Function *setWhitelist()* L341:
-* Correctly adds *onlyOwner* modifier on L341.
+Function `setVaultAddress()` L331:
+* Correctly adds `onlyOwner` modifier on L331.
 
-Function *setPayment()* L352:
-* Correctly adds *onlyOwner* modifier on L352.
-* Correctly adds *whenNotPaused* modifier on L352.
-* Could add *mul()* from *SafeMath* on L354 (?)
+Function `setDappRelation()` L336:
+* Correctly adds `onlyOwner` modifier on L336.
 
-Function *onERC721Received()* L394:
-* Correctly creates function based on *onERC721Received()* from *IERC721.sol* on L394.
+Function `setWhitelist()` L341:
+* Correctly adds `onlyOwner` modifier on L341.
 
-Function *onERC1155Received()* L397:
-* Correctly creates function based on *onERC1155Received()* from *IERC1155.sol* on L397.
+Function `setPayment()` L352:
+* Correctly adds `onlyOwner` modifier on L352.
+* Correctly adds `whenNotPaused` modifier on L352.
+* Could add `mul()` from `SafeMath` on L354 (?)
 
-Function *onERC1155BatchReceived* L400:
-* Correctly creates function based on *onERC1155BatchReceived()* from *IERC1155.sol* on L400.
+Function `onERC721Received()` L394:
+* Correctly creates function based on `onERC721Received()` from `IERC721.sol` on L394.
+
+Function `onERC1155Received()` L397:
+* Correctly creates function based on `onERC1155Received()` from `IERC1155.sol` on L397.
+
+Function `onERC1155BatchReceived` L400:
+* Correctly creates function based on `onERC1155BatchReceived()` from `IERC1155.sol` on L400.
 
 ### `contracts/Pausable.sol`
 
-Contract *BatchSwap* on L6:
-* Correctly inherits the *Ownable* contract on L6.
+Contract `BatchSwap` on L6:
+* Correctly inherits the `Ownable` contract on L6.
 
-function *setPauseStatus()* on L13:
-* Correctly adds *onlyOwner* modifier on L13.
+function `setPauseStatus()` on L13:
+* Correctly adds `onlyOwner` modifier on L13.
