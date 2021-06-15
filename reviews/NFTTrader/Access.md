@@ -93,3 +93,4 @@ Recommendations:
 - `assetTrait`
   - ?
 - `getVaultBalance` is a read-only method but has an onlyOwner modifier which doesn't seem necessary or useful(?)
+- `sendVaultBalance` owner can send the vault balance to any receiver they call.
