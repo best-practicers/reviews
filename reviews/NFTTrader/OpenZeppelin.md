@@ -93,6 +93,8 @@ Contract `ERC1155Five` on L7:
 
 ### `contracts/ERC1155Four.sol`
 
+### Note:
+
 L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
 
 Contract `ERC1155Four` on L7:
@@ -102,6 +104,8 @@ Contract `ERC1155Four` on L7:
 * Assuming provided JSON is acceptable URI, passes it correctly to `ERC1155` constructor on L14.
 
 ### `contracts/ERC1155One.sol`
+
+### Note:
 
 L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
 
@@ -113,6 +117,8 @@ Contract `ERC1155One` on L7:
 
 ### `contracts/ERC1155Six.sol`
 
+### Note:
+
 L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
 
 Contract `ERC1155Six` on L7:
@@ -122,6 +128,8 @@ Contract `ERC1155Six` on L7:
 * Assuming provided JSON is acceptable URI, passes it correctly to `ERC1155` constructor on L14.
 
 ### `contracts/ERC1155Three.sol`
+
+### Note:
 
 L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
 
@@ -133,6 +141,8 @@ Contract `ERC1155Three` on L7:
 
 ### `contracts/ERC1155Two.sol`
 
+### Note:
+
 L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
 
 Contract `ERC1155Two` on L7:
@@ -140,6 +150,38 @@ Contract `ERC1155Two` on L7:
 
 `constructor()` L14:
 * Assuming provided JSON is acceptable URI, passes it correctly to `ERC1155` constructor on L14.
+
+### `contracts/ERC20Four.sol`
+
+Contract `ERC20Four` on L5:
+* Correctly inherits the `ERC20` from its respective solidity file.
+
+`constructor()` L6:
+* Correctly passes strings to `ERC20` constructor on L6.
+
+### `contracts/ERC20One.sol`
+
+Contract `ERC20One` on L5:
+* Correctly inherits the `ERC20` from its respective solidity file.
+
+`constructor()` L6:
+* Correctly passes strings to `ERC20` constructor on L6.
+
+### `contracts/ERC20Three.sol`
+
+Contract `ERC20Three` on L5:
+* Correctly inherits the `ERC20` from its respective solidity file.
+
+`constructor()` L6:
+* Correctly passes strings to `ERC20` constructor on L6.
+
+### `contracts/ERC20Two.sol`
+
+Contract `ERC20Two` on L5:
+* Correctly inherits the `ERC20` from its respective solidity file.
+
+`constructor()` L6:
+* Correctly passes strings to `ERC20` constructor on L6.
 
 ### `contracts/Pausable.sol`
 
