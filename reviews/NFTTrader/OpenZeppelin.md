@@ -83,10 +83,60 @@ Function `sendVaultBalance()` L22:
 
 ### Note:
 
-L5: Imported `Counters.sol` from OpenZepplin, but never implemented in the contract code.
+L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
 
 Contract `ERC1155Five` on L7:
-* Correctly inherits the `ERC1155` from its respective solidity files.
+* Correctly inherits the `ERC1155` from its respective solidity file.
+
+`constructor()` L14:
+* Assuming provided JSON is acceptable URI, passes it correctly to `ERC1155` constructor on L14.
+
+### `contracts/ERC1155Four.sol`
+
+L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
+
+Contract `ERC1155Four` on L7:
+* Correctly inherits the `ERC1155` from its respective solidity file.
+
+`constructor()` L14:
+* Assuming provided JSON is acceptable URI, passes it correctly to `ERC1155` constructor on L14.
+
+### `contracts/ERC1155One.sol`
+
+L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
+
+Contract `ERC1155One` on L7:
+* Correctly inherits the `ERC1155` from its respective solidity file.
+
+`constructor()` L14:
+* Assuming provided JSON is acceptable URI, passes it correctly to `ERC1155` constructor on L14.
+
+### `contracts/ERC1155Six.sol`
+
+L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
+
+Contract `ERC1155Six` on L7:
+* Correctly inherits the `ERC1155` from its respective solidity file.
+
+`constructor()` L14:
+* Assuming provided JSON is acceptable URI, passes it correctly to `ERC1155` constructor on L14.
+
+### `contracts/ERC1155Three.sol`
+
+L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
+
+Contract `ERC1155Three` on L7:
+* Correctly inherits the `ERC1155` from its respective solidity file.
+
+`constructor()` L14:
+* Assuming provided JSON is acceptable URI, passes it correctly to `ERC1155` constructor on L14.
+
+### `contracts/ERC1155Two.sol`
+
+L5: Imported `Counters.sol` from OpenZeppelin, but never implemented in the contract code.
+
+Contract `ERC1155Two` on L7:
+* Correctly inherits the `ERC1155` from its respective solidity file.
 
 `constructor()` L14:
 * Assuming provided JSON is acceptable URI, passes it correctly to `ERC1155` constructor on L14.
