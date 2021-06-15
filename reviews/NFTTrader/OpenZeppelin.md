@@ -16,7 +16,7 @@ Contract `AXBridge` on L11:
 
 ### Note:
 
-L13-L30, created own version of ERC20, ERC721, and ERC1155 interfaces rather than using Open Zeppelin's interfaces for the same ERC standards. Does not have full functionality of the Open Zeppelin interfaces, so perhaps that is why they did not utilize them, but they could have.
+L13-L30: Created own version of ERC20, ERC721, and ERC1155 interfaces rather than using OpenZeppelin's interfaces for the same ERC standards. Does not have full functionality of the OpenZeppelin interfaces, so perhaps that is why they did not utilize them, but they could have.
 
 Contract `BatchSwap` on L63:
 * Correctly inherits the `Ownable`, `Pausable`, `IERC721Receiver`, `IERC1155Receiver` modifier from their respective solidity files.
@@ -63,6 +63,33 @@ Function `onERC1155Received()` L397:
 
 Function `onERC1155BatchReceived` L400:
 * Correctly creates function based on `onERC1155BatchReceived()` from `IERC1155.sol` on L400.
+
+### `contracts/BatchVault.sol`
+
+Contract `BatchVault` on L7:
+* Correctly inherits the `Ownable`, `Pausable` from their respective solidity files.
+
+Function `getVaultBalance()` L17:
+* Correctly adds `onlyOwner` modifier on L17.
+* Correctly adds `whenNotPaused` modifier on L17.
+
+Function `sendVaultBalance()` L22:
+* Correctly adds `onlyOwner` modifier on L22.
+* Correctly adds `whenNotPaused` modifier on L22.
+
+### `contracts/CKBridge.sol`
+
+### `contracts/ERC1155Five.sol`
+
+### Note:
+
+L5: Imported `Counters.sol` from OpenZepplin, but never implemented in the contract code.
+
+Contract `ERC1155Five` on L7:
+* Correctly inherits the `ERC1155` from its respective solidity files.
+
+`constructor()` L14:
+* Assuming provided JSON is acceptable URI, passes it correctly to `ERC1155` constructor on L14.
 
 ### `contracts/Pausable.sol`
 
