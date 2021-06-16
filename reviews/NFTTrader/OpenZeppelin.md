@@ -249,6 +249,9 @@ Contract `TradeSquads` on L11:
 Struct `Series` on L35:
 * Cannot find documentation to prove `Counters` was used correctly on L36.
 
+Mapping `hierarchyCounter` on L61:
+* Correctly maps to `Counters.Counter` on L61.
+
 `constructor()` L65:
 * Correctly strings to `ERC721` constructor on L66-69.
 * Cannot find documentation if usage of `Counters` as a type is correct on L74.
@@ -296,6 +299,7 @@ Function `setTrait()` on L225:
 Function `addSeries()` on L236:
 * Correctly adds `onlyOwner` modifier on L236.
 * Correctly calls function `increment()` from `Counters` on L238.
+* Correctly calls function `Counters.Counter()` from `Counters` on L239.
 
 Function `setSupply()` on L242:
 * Correctly adds `onlyOwner` modifier on L242.
@@ -309,6 +313,8 @@ Function `assetTrait()` on L251:
 * Correctly calls function `add()` from `SafeMath` on L260.
 * Correctly calls function `mod()` from `SafeMath` on L267.
 * Correctly calls function `mod()` from `SafeMath` on L270.
+* Correctly calls function `sub()` from `SafeMath` on L281.
+* Correctly calls function `add()` from `SafeMath` on L290.
 * Correctly calls function `mod()` from `SafeMath` on L295.
 * Correctly calls function `mod()` from `SafeMath` on L300.
 * Correctly calls function `sub()` from `SafeMath` on L311.
