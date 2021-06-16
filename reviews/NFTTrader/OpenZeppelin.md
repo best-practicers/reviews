@@ -222,8 +222,101 @@ Contract `ERC721Two` on L7:
 
 ### `contracts/Pausable.sol`
 
+### Note:
+
+OpenZeppelin has a [`Pausable` contract](https://docs.openzeppelin.com/contracts/2.x/api/lifecycle), so perhaps creating a new one is unnecessary?
+
 Contract `BatchSwap` on L6:
 * Correctly inherits the `Ownable` contract on L6.
 
 function `setPauseStatus()` on L13:
 * Correctly adds `onlyOwner` modifier on L13.
+
+### `contracts/TradeSquads.sol`
+
+### Note:
+
+Can `increment()` be used instead of `++`?
+
+Contract `TradeSquads` on L11:
+* Correctly inherits the `ERC721`, `Ownable` from their respective solidity files on L11.
+* Correctly implements `SafeMath` on L15.
+* Correctly implements `Counters` on L16.
+* Correctly implements `Strings` on L17.
+* Cannot find documentation to prove `Counters` was used correctly on L32.
+* Cannot find documentation to prove `Counters` was used correctly on L33.
+
+Struct `Series` on L35:
+* Cannot find documentation to prove `Counters` was used correctly on L36.
+
+`constructor()` L65:
+* Correctly strings to `ERC721` constructor on L66-69.
+* Cannot find documentation if usage of `Counters` as a type is correct on L74.
+* Correctly calls function `increment()` from `Counters` on L75.
+* Cannot find documentation if usage of `Counters` as a type is correct on L76.
+
+Function `awardItem()` on L127:
+* Correctly calls function `increment()` from `Counters` on L134.
+* Correctly calls function `increment()` from `Counters` on L135.
+* Correctly calls function `toString()` from `Strings` on L139.
+* Correctly calls function `increment()` from `Counters` on L144.
+* Correctly calls function `increment()` from `Counters` on L146.
+* Correctly calls function `div()` from `SafeMath` on L148.
+* Correctly calls function `mod()` from `SafeMath` on L156.
+* Correctly calls function `add()` from `SafeMath` on L157.
+* Correctly calls function `increment()` from `Counters` on L158.
+* Correctly calls function `mod()` from `SafeMath` on L163.
+* Correctly calls function `mod()` from `SafeMath` on L166.
+* Correctly calls function `sub()` from `SafeMath` on L177.
+* Correctly calls function `add()` from `SafeMath` on L185.
+* Correctly calls function `increment()` from `Counters` on L186.
+* Correctly calls function `toString()` from `Strings` on L192.
+
+Function `setClaimVal()` on L196:
+* Correctly adds `onlyOwner` modifier on L196.
+
+Function `setClaimer()` on L200:
+* Correctly adds `onlyOwner` modifier on L200.
+
+Function `setDeltaHierarchy()` on L204:
+* Correctly adds `onlyOwner` modifier on L204.
+
+Function `setRangeNumber()` on L209:
+* Correctly adds `onlyOwner` modifier on L209.
+
+Function `setRange()` on L214:
+* Correctly adds `onlyOwner` modifier on L214.
+
+Function `setTraitNumber()` on L220:
+* Correctly adds `onlyOwner` modifier on L220.
+
+Function `setTrait()` on L225:
+* Correctly adds `onlyOwner` modifier on L225.
+
+Function `addSeries()` on L236:
+* Correctly adds `onlyOwner` modifier on L236.
+* Correctly calls function `increment()` from `Counters` on L238.
+
+Function `setSupply()` on L242:
+* Correctly adds `onlyOwner` modifier on L242.
+
+Function `handleSeries()` on L247:
+* Correctly adds `onlyOwner` modifier on L247.
+
+Function `assetTrait()` on L251:
+* Correctly calls function `mod()` from `SafeMath` on L255.
+* Correctly calls function `mod()` from `SafeMath` on L259.
+* Correctly calls function `add()` from `SafeMath` on L260.
+* Correctly calls function `mod()` from `SafeMath` on L267.
+* Correctly calls function `mod()` from `SafeMath` on L270.
+* Correctly calls function `mod()` from `SafeMath` on L295.
+* Correctly calls function `mod()` from `SafeMath` on L300.
+* Correctly calls function `sub()` from `SafeMath` on L311.
+* Correctly calls function `mod()` from `SafeMath` on L321.
+* Correctly calls function `add()` from `SafeMath` on L323.
+
+Function `getVaultBalance()` on L343:
+* Correctly adds `onlyOwner` modifier on L343.
+
+Function `sendVaultBalance()` on L347:
+* Correctly adds `onlyOwner` modifier on L347.
