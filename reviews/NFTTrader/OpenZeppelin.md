@@ -2,7 +2,16 @@
 ## Created by: [Roberto Cantu](https://github.com/RCantu92)
 
 ## Summary
-* TLDR of the findings
+
+Overall, I would say the implementation of the OpenZeppelin contracts was well done.
+
+A couple of things to note, however:
+
+* They did create their own version of the ERC20, ERC721, and ERC1155 interfaces rather than using OpenZeppelin's interfaces for the same ERC standards. I noticed they did not have full functionality of the OpenZeppelin interfaces, so perhaps that is why they did not utilize them, but they could have.
+
+* OpenZeppelin has a [`Pausable` contract](https://docs.openzeppelin.com/contracts/2.x/api/lifecycle), so perhaps creating a new one is unnecessary, unless similar to them creating their own ERC intefaces, didn't require the full functionality of the OpenZeppelin ones.
+
+* Seeing as how `Counters.sol` from OpenZeppelin is to increment or decrement numbers by one, perhaps they could use `increment()` and `decrement()` instead of `++`. (There may be a reason that is not typcially done, however.)
 
 ## File Review
 
