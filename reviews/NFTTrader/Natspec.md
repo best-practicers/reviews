@@ -4,12 +4,22 @@ Created by: Anthony Graignic
 Date: 2021-06-17
 Commit ID(NFTTrader.io): bc3cca51004b903e4e6e3495f5bf53875ea59fd6
 
-Note: the code provided only included the 2 folders `contracts` containing all the Solidity files and a `test` folder containing a single test file called `001_deployment_test.js`. Providing a `package.json` while not mandatory would have facilitate the audit.
+Note: the code provided only included the 2 folders `contracts` containing all the Solidity files and a `test` folder containing a single test file called `001_deployment_test.js`.
+Providing a `package.json` while not mandatory would have facilitate the audit.
+
+## Scope
+
+```
+├── Docs.docx
+└── contracts/
+└── test/
+```
 
 ## Summary
 
 - There is 0 valid Natspec provided for the `contracts`.
 - However the code is not completely empty of comments, only the `BatchSwap.sol` provide comment in a non-NatSpec format but those comments are really not useful e.g. "//Interface" for `abstract contract ERC20Interface {` L12-13.
+  Additional descriptions of the main functions are provided in the `Docs.docx` to explain the aim of each.
 - Some comments and function documentation are provided for the tests e.g. from L317 to L322 for the `checkOwnershipOfERC721Tokens` function in `001_deployment_test.js`.
 - Some comments were written in Italian in the `test/001_deployment_test.js`. All comments should be done in one unique language (preferably English)
 - There is no formating of files e.g. [prettier](https://github.com/prettier-solidity/prettier-plugin-solidity/) and some lines can make up to 186 char which decrease the code readability.
