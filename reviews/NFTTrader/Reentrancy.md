@@ -45,7 +45,7 @@
 
 #### `AXBridge.sol`
 
-- AXBridge is defined as Ownable with an onlyOwner modifier on its only function `bridgeSafeTransferFrom`. Although `bridgeSafeTransferFrom` makes an external function call `transferFrom`, on `bridgeSafeTransferFrom` the onlyOwner modifier appears to prevent it from being susceptible to reentrancy.
+- AXBridge is defined as Ownable with an onlyOwner modifier on its only function `bridgeSafeTransferFrom`. Although `bridgeSafeTransferFrom` makes an external function call `transferFrom`, on `bridgeSafeTransferFrom` the onlyOwner modifier appears to prevent it from being susceptible to reentrancy. That said, a reetrancy guard would be advisable since this function is executed via a custom interface on the Batchswap.sol contract.
 
 #### `BatchSwap.sol`
 
@@ -60,7 +60,7 @@
 
 #### `CKBridge.sol`
 
-- `bridgeSafeTransferFrom` can be called by anyone with `CKInterface.transfer()` unclear why. Re-entrancy Guard recommended or another modifier/guard (such as onlyOwner)
+- `bridgeSafeTransferFrom` can be called by anyone with `CKInterface.transfer()` unclear why. Re-entrancy Guard recommended or another modifier/guard (such as onlyOwner). Not consistent with `bridgeSafeTransferFrom` on the `AXBridge.sol`
 
 #### ERC1155Five.sol - ERC721Two.sol
 
