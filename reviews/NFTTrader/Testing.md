@@ -13,7 +13,7 @@ Commit ID(NFTTrader.io): bc3cca51004b903e4e6e3495f5bf53875ea59fd6
 
 - The test file contains utilitary/helper methods that should be in another file to clarify the test file.
 - The test "Deploy Smart Contracts" doesn't contain assertions and should be moved to a `before ()` method if only used to deploy contracts.
-- The tests could use the Arrange, Act and Assert (AAA) pattern to gain readibility.
+- All the tests could use the same Arrange, Act and Assert (AAA) pattern to gain readibility.
 
 ## Scope
 
