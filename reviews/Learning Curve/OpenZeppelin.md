@@ -47,7 +47,7 @@ Imports OpenZeppelin `token/ERC20/IERC20.sol` and `token/ERC20/utils/SafeERC20.s
 
 * `stable` calls the `stable.approve` `IERC20` library's function.
 
-* All other `stable` calls use the `SaveERC20` library's functions.
+* All other `stable` calls use the `SafeERC20` library's functions.
 
 Imports `LearningCurve.sol`.
 
@@ -57,7 +57,7 @@ Imports `LearningCurve.sol`.
 
 ### `contracts/LearningCurve.sol`
 
-Imports OpenZeppelin `token/ERC20/ERC20.sol`, `token/ERC20/IERC20.sol` and `token/ERC20/utils/SaveERC20.sol`:
+Imports OpenZeppelin `token/ERC20/ERC20.sol`, `token/ERC20/IERC20.sol` and `token/ERC20/utils/SafeERC20.sol`:
 
 * The `LearningCurve` contract inherits `ERC20`.
 
@@ -67,7 +67,7 @@ Imports OpenZeppelin `token/ERC20/ERC20.sol`, `token/ERC20/IERC20.sol` and `toke
 
 * `reserve` inherits `IERC20`.
 
-* `reserve` calls use the `SaveERC20` library's functions.
+* `reserve` calls use the `SafeERC20` library's functions.
 
 ###  `contracts/PBRMath.sol`
 
