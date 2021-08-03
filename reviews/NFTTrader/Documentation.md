@@ -2,6 +2,7 @@
 ## Created by: [bestape](https://github.com/bestape)
 
 ## Summary
+* Providing a `package.json` while not mandatory would have facilitated the audit.
 * The [natspec](https://docs.soliditylang.org/en/v0.7.5/natspec-format.html) documentation standard is not used.
 * It is unclear if any documentation standard is used.
 * Available comments provide the basic development outline, and are presented in multiple languages. 

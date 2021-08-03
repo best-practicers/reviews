@@ -1,19 +1,5 @@
 # Natspec
-
-Created by: Anthony Graignic, Dhruv Malik
-Date: 2021-06-17
-Commit ID(NFTTrader.io): bc3cca51004b903e4e6e3495f5bf53875ea59fd6
-
-Note: the code provided only included the 2 folders `contracts` containing all the Solidity files and a `test` folder containing a single test file called `001_deployment_test.js`.
-Providing a `package.json` while not mandatory would have facilitate the audit.
-
-## Scope
-
-```
-├── Docs.docx
-└── contracts/
-└── test/
-```
+## Created by: [Anthony Graignic](https://github.com/anthonygraignic), [Dhruv Malik](https://github.com/dhruvmalik007)
 
 ## Summary
 
@@ -25,11 +11,20 @@ Providing a `package.json` while not mandatory would have facilitate the audit.
 - There is no formating of files e.g. [prettier](https://github.com/prettier-solidity/prettier-plugin-solidity/) and some lines can make up to 186 char which decrease the code readability.
 - A FIXME was left in `CKBridge.sol` indicating that some feature is missing in that case, the Ownership management.
 
-## File Review
+## Scope
 
 As the contracts did not contain NatSpec documentation but poorly Javascript-like documentation. The file review will only concern the single file containing comments: `BatchSwap.sol`
 
-#### `BatchSwap.sol`
+```
+├── Docs.docx
+└── contracts
+  └── BatchSwap.sol
+```
+
+
+## File Review
+
+### `BatchSwap.sol`
 
 Comments provided in the code are not useful e.g.
 | Line numbers | Observation |
@@ -69,5 +64,3 @@ Comments provided in the code are not useful e.g.
 | L378 | Missing NatSpec documentation for `getSwapStructSize` function |
 | L386 | Missing NatSpec documentation for `getSwapStruct` function |
 | L403 | Missing NatSpec documentation for `supportsInterface` function |
-
-- "//Interface" for `abstract contract ERC20Interface {` or `struct swapStruct {` L89-90 in `BatchSwap.sol`

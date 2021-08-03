@@ -6,10 +6,6 @@
 
 - The contracts use onlyOwner modifiers throughout to control access except for select unknown circumstances.
 
-### Recommendations
-
--
-
 ## Scope
 
 ```
