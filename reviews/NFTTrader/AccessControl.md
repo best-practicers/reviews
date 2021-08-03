@@ -1,8 +1,7 @@
 # Access Control
 
-## Created by:
+## Created by: Dhruv Malik
 
-Dhruv 
 ## abstract / methodology of the analysis . 
 
 -   cheking the workflow of the diffrent counterparties interacting with the smart contracts ( i.e state machine of  getting the proxy contract get the user NFT's , and then   ) by static  reading of the code .
@@ -49,5 +48,3 @@ contracts whose functions are being primarily being defined in the  docs , along
 #### `<contract>.sol`
 
 #### `<contract>.sol`
-
-...
