@@ -1,5 +1,5 @@
 # NFTTrader
-## Reviewed: 2021.06.11 - 2021.07.12
+## Reviewed: 2021.07.12
 
 ### Summary
 This review by the Best Practicers covers [NFTTrader](https://nfttrader.io) on commit [``](TODO)

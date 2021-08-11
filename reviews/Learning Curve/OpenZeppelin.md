@@ -1,19 +1,8 @@
 # OpenZeppelin
-## Created by: [Kyle Smith](https://github.com/bestape)
+## Created by: [Kyle Smith](https://github.com/bestape), [@carlfarterson](https://github.com/carlfarterson)
 
 ## Summary
-
-This repository feels professional. Well done!
-
-I am new to Solidity and OpenZeppelin so beware. 
-
-I did spend many additional hours filling in the gaps and, as such, I believe my review is thorough. 
-
-Just a disclaimer.
-
-* This repository is not a complex application of OpenZeppelin and is relatively straightforward.
-
-* The only issue I saw was `stable` called `stable.approve` in `KernelFactory.sol` instead of `stable.safeApprove`.
+This repository is not a complex application of OpenZeppelin and is relatively straightforward.
 
 ## File Review
 
