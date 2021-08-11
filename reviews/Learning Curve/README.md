@@ -7,8 +7,8 @@ This review by the Best Practicers covers Gitcoin KERNEL's [Learning Curve](http
 ---
 
 ## Reviews
+### [Access Control](./AccessControl.md)
 ### [Documentation](./Documentation.md)
 ### [Natspec](./Natspec.md)
 ### [OpenZeppelin](./OpenZeppelin.md)
-### [Reentrancy](./Reentrancy.md)
 ### [Testing](./Testing.md)

@@ -1,6 +1,5 @@
 # Testing
-## Created by: [michaelbnewman](https://github.com/michaelbnewman)
-## Reviewed by: PENDING
+## Created by: [@michaelbnewman](https://github.com/michaelbnewman)
 
 ## Review Comments (Summary)
 * Make a `requirements.txt` file for use with `pip install -r requirements.txt`.
@@ -192,13 +191,6 @@ $ brownie test tests --coverage
     ERC20.transfer - 0.0%
     ERC20.transferFrom - 0.0%
 
-Coverage report saved at learning-curve/reports/coverage.json
-View the report using the Brownie GUI
 ======================================================= 18 passed in 404.96s (0:06:44) ========================================================
-Terminating local RPC client...
 
-# To see more info about coverage:
-# https://eth-brownie.readthedocs.io/en/stable/gui.html
-$ brownie gui
-# Color coding for the GUI did not work for me. Would be handy to see what is covered versus not in the solidity code.
 ```
