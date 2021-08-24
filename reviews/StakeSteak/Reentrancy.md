@@ -18,6 +18,8 @@
 
 ## Recommendations
 * Don't use the `immutable` modifier for the steak token variable, instead first deploy the steak token and then hardcode its address into the SteakHouse.sol so that there is less risk during deployments that a malicious token is accidently deployed which could take advantage of the reentrancy problem.
+* Use a mutex variable to lock repetitive calls in #deposit and #withdraw or use [OZ ReentrancyGuard](https://docs.openzeppelin.com/contracts/4.x/api/security#ReentrancyGuard)
+* Use the `Checks-Effects-Interactions` pattern so that state changes are done before external calls: [#withdraw](https://github.com/xam-darnold/steak-public-contracts/blob/a3789a61a54cbda943324abc814932e8d137347d/contracts/SteakHouse.sol#L267-L270)
 
 ## Full Slither reports
 
