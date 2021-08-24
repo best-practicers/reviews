@@ -7,3 +7,4 @@ All reviews completed by the Best Practicers
 * 2021.06.11: [weiWard](https://weiward.org)
 * 2021.07.12: [NFTTrader](https://nfttrader.io)
 * 2021.08.09: [Gitcoin KERNEL Learning Curve](https://github.com/kernel-community/learning-curve)
+* TBD: [StakeSteak](https://stakesteak.com/)
