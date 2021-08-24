@@ -1,11 +1,18 @@
 # Testing :
-by [@GrandGarcon]().
+by [@GrandGarcon](https://github.com/GrandGarcon).
 
 ##  Review summary :
 the contracts are being reviewed from the hash commit : 
 
-- commands for  creating the build , running the tests are not defined by the repo , thus adding quite a lot of redundant information , thus there needs to be definion of the 
+some general basic changes :
+  - commands for  creating the build
+  -  running the tests are not defined by the repo .
+  -  version of hardhat is not compatible to run the tests .
 
+
+About tests : 
+-  the tests for both version are successfully compiled and have 
+-   tests are not comprehensively covering the user stories and use cases , thus need of improvement .
 
 
 ## review process : 
@@ -51,8 +58,8 @@ thus manually analysing  the tests :
 now  further  analysing the tests from the persepective of the [best practices](https://docs.onflow.org/dapp-deployment/contract-testing/#testing-requirements):  
 
   - in the SteakHouseV2 : the function like collect() function is not being tested  in  the script .
-  - should also check some of the  integrated tests as being defined in the [testing of Masterchef contracts](https://github.com/sushiswap/sushiswap/blob/canary/test/MasterChefV2.test.ts).
-  - 
+  - should also check some of the  integrated tests as being defined in the [testing of Masterchef contracts](https://github.com/sushiswap/sushiswap/blob/canary/test/MasterChefV2.test.ts) for reference.
+  
 
 
 
