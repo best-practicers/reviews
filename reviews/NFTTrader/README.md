@@ -2,7 +2,7 @@
 ## Reviewed: 2021.07.12
 
 ### Summary
-This review by the Best Practicers covers [NFTTrader](https://nfttrader.io) on commit [``](TODO)
+This review by the Best Practicers covers [NFTTrader](https://nfttrader.io).  The repository is private.
 
 ## Reviews
 ### [Access Control](./AccessControl.md)
