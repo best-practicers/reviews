@@ -13,8 +13,8 @@
 	  - user.remainingSteakTokenReward = safeRewardTransfer(msg.sender,pending) [contracts/SteakHouse.sol#266](https://github.com/xam-darnold/steak-public-contracts/blob/a3789a61a54cbda943324abc814932e8d137347d/contracts/SteakHouse.sol#L266)
 
 * However, due to the fact that the issue could only be exploited if the steak token was manipulated during deployment it only could be an issue the first time this is deployed or for every fork of it:
-  * [constructor assignment]:(https://github.com/xam-darnold/steak-public-contracts/blob/master/contracts/SteakHouse.sol#L78)
-  * [field definition as immutable]:(https://github.com/xam-darnold/steak-public-contracts/blob/master/contracts/SteakHouse.sol#L45)
+  * [constructor assignment](https://github.com/xam-darnold/steak-public-contracts/blob/master/contracts/SteakHouse.sol#L78)
+  * [field definition as immutable](https://github.com/xam-darnold/steak-public-contracts/blob/master/contracts/SteakHouse.sol#L45)
 
 ## Recommendations
 * Don't use the `immutable` modifier for the steak token variable, instead first deploy the steak token and then hardcode its address into the SteakHouse.sol so that there is less risk during deployments that a malicious token is accidently deployed which could take advantage of the reentrancy problem.
