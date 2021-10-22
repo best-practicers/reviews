@@ -2,7 +2,7 @@
 ## Created by: [Carl Farterson](https://github.com/dhruvmalik007)
 
 ## Summary
-
+This is the summary
 
 ## Scope
 
