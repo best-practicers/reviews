@@ -1,5 +1,5 @@
 # reviews
-All reviews completed by the Best Practicers
+All reviews completed by the Best Practicers.  This project was formed in the [Gitcoin KERNEL](https://www.kernel.community/en/) and is no longer active.
 
 ### Projects Reviewed
 * 2020.02.22: [swirl-protocol](https://tonic.finance)
